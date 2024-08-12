@@ -1,0 +1,89 @@
+Student ID: 43442148
+   /\__________/\  
+  /\ \        /\ \ 
+ /\ \ \ * test * /\ \ 
+FORCE -2: (-2 + 0)
+QUICKNESS -1: (-1 + 0)
+RESILIENCE 1: (0 + 1)
+ANALYTICAL 1: (1 + 0)
+EMPATHY 2: (2 + 0)
+ \/___________/\ 
+HITPOINTS: 10/13
+[*] [*] [*] [*] [*] [*] [*] [*] [*] [*] [ ] [ ] [ ] 
+TEMP HP: 0
+
+XP: 0/4
+[ ] [ ] [ ] [ ] 
+
+
+[SPECIALTIES]
+FARMER
+You've spent much of your life waking early and working hard on the field.
+
+SMITH
+You've spent much of your life working in the heat of the smithy.
+
+MERCHANT
+You've spent much of your life travelling, managing logistics and bartering with people.
+
+INNKEEPER
+You've spent much of your life as an innkeeper, acting as a community figurehead, and running an establishment
+
+BANDIT
+You've spent much of your life violently stealing from those weaker then you
+
+FARMER
+You've spent much of your life waking early and working hard on the field.
+
+
+
+[FEATURES]
+DOWNED []
+"you are near death!"
+
+EARLY RISER []
+requires: resilience >= 0 
+"You've spent your life having to get up early, you are not afflicted by drowsy or similar effects in the morning."
+
+HEAT RESISTANT []
+requires: resilience >= 0 
+"You've spent your life working around intense heat, it doesn't bother you much anymore. You can roll twice and take the best result on checks related to heat."
+
+WEATHER MINDED []
+"You've developed a strong set of heuristics you use to predict the weather and have gotten pretty good at it. You can roll twice and take the best result when doing rolls related to the weather"
+
+READ [*]
+"You have learned to read!, a valuable rare skill."
+
+WRITE []
+"You have learned to write! a valuable rare skill."
+
+VIOLENT [*]
+"You are worryingly comfortableinflicting violence on others, You can roll twice and take the best result when doing violent activities such as combat."
+
+BASIC MATHEMATICS []
+requires: analytical >= 0 
+"You have learned basic mathematics like arithmetic ! a valuable rare skill."
+
+ANALYTICAL MIND [**]
+requires: analytical >= 0 
+"You have developed a sharp analytical mind with steady constant practice. +1 analytical"
+
+SOCIALLY FLUENT []
+requires: empathy >= 0 
+"You have developed a strong social fluency. +1 empathy."
+
+CALLOUS [**]
+"You are indifferent tothe impact of your actions on others. -2 empathy, +1 force."
+
+GRIT [**]
+"Through your life you've built up a good tolerance for long hours and hard work."
+
+HEAT RESISTANT []
+requires: resilience >= 0 
+"You've spent your life working around intense heat, it doesn't bother you much anymore. You can roll twice and take the best result on checks related to heat."
+
+READ [*]
+"You have learned to read!, a valuable rare skill."
+
+
