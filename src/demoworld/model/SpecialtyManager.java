@@ -21,8 +21,10 @@ public class SpecialtyManager {
      * Adds a Specialty to the SpecialtyManager
      * @param specialty the specialty being added to the SpecialtyManager
      */
-    public void add(Specialty specialty){
-        specialties.add(specialty);
+    public void add(Specialty specialty) {
+        if (!specialties.contains(specialty)) {
+            specialties.add(specialty);
+        }
     }
 
     /**
@@ -40,10 +42,17 @@ public class SpecialtyManager {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\n[SPECIALTIES]\n");
+
+        sb.append("        |==============================\\\n");
+        sb.append("[0]#####>-------- SPECIALTIES ---------->\n");
+        sb.append("        |==============================/\n");
+
+        int index = 1;
         for (Specialty specialty : specialties) {
-            sb.append(specialty.toString()).append("\n");
+            sb.append(index++).append(". ").append(specialty.getName().toUpperCase()).append("\n");
+            sb.append(specialty.getDescription()).append("\n\n");
         }
+
         return sb.toString();
     }
 }

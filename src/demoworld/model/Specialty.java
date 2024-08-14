@@ -94,7 +94,11 @@ public class Specialty implements Adjuster{
      * @param character the Character to adjust
      * @return the adjusted character
      */
-    public Character adjust(Character character){
+    public Character adjust(Character character) {
+        if (!character.getSpecialty().all().contains(this)) {
+            character.getSpecialty().add(this);
+        }
+
         for (Feature feature : features) {
             character = feature.adjust(character);
         }
@@ -106,7 +110,9 @@ public class Specialty implements Adjuster{
      * @param character the Character to unadjust
      * @return the unadjusted character
      */
-    public Character unadjust(Character character){
+    public Character unadjust(Character character) {
+        character.getSpecialty().all().remove(this);
+
         for (Feature feature : features) {
             character = feature.unadjust(character);
         }

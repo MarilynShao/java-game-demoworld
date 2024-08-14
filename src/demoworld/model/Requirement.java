@@ -33,22 +33,6 @@ public class Requirement {
     }
 
     /**
-     * Gets the statKey for this requirement.
-     * @return the statKey for this requirement
-     */
-    public String getStatKey() {
-        return statKey;
-    }
-
-    /**
-     * Gets the threshold for this requirement.
-     * @return the threshold for this requirement
-     */
-    public int getThreshold() {
-        return threshold;
-    }
-
-    /**
      * Returns if the Character current state fulfills the criteria of this specific Requirement
      * @param character the character state that will be checked
      * @return true if the characters Stat that matches the statKey

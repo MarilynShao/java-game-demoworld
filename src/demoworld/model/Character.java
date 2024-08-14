@@ -23,8 +23,8 @@ public class Character {
         this.rulebook = rulebook;
         this.statManager = rulebook.getStat();
         this.experience = rulebook.getExperienceReference();
-        this.featureManager = rulebook.getFeature();
-        this.specialtyManager = rulebook.getSpecialty();
+        this.featureManager = new FeatureManager();
+        this.specialtyManager = new SpecialtyManager();
     }
 
     /**
@@ -91,6 +91,9 @@ public class Character {
     public void addSpecialty(Specialty specialty){
         specialtyManager.add(specialty);
         specialty.adjust(this);
+        for (Feature feature : specialty.getFeatures()) {
+            addFeature(feature);
+        }
     }
 
     /**
@@ -145,7 +148,6 @@ public class Character {
         experience.addToCurrent(value);
         if (experience.canLevelUp()) {
             experience.resetToMin();
-            // Handle leveling up, will develop later
         }
     }
 
@@ -163,7 +165,7 @@ public class Character {
         sb.append("\\__|                                     |\n");
 
         // Character name centered with padding
-        sb.append("   |              *").append(name).append("*                 |\n");
+        sb.append("   |             * ").append(name).append(" *                |\n");
 
         // Padding for spacing
         sb.append("   |                                     |\n");
@@ -181,14 +183,16 @@ public class Character {
         sb.append("   \\_/_____________________________________/\n");
 
         // Adding hitpoints
-        sb.append(getStatByName("hitpoints").toString()).append("\n");
+        sb.append(getStatByName("hitpoints").toString());
 
         // Adding experience
-        sb.append(experience.toString()).append("\n");
+        sb.append(getExperience().toString());
 
-        // Specialties and Features
-        sb.append(specialtyManager.toString()).append("\n");
-        sb.append(featureManager.toString()).append("\n");
+        // Specialties
+        sb.append(getSpecialty().toString()).append("\n");
+
+        // Features
+        sb.append(getFeature().toString()).append("\n");
 
         return sb.toString();
     }

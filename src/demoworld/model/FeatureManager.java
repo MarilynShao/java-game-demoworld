@@ -65,10 +65,17 @@ public class FeatureManager {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\n[FEATURES]\n");
+
+        sb.append("        |===========================\\\n");
+        sb.append("[0]#####>-------- FEATURES ---------->\n");
+        sb.append("        |===========================/\n");
+
+        int index = 1;
+
         for (Feature feature : features) {
-            sb.append(feature.toString()).append("\n");
+            sb.append(index++).append(". ").append(feature.toString()).append("\n");
         }
+
         return sb.toString();
     }
 }

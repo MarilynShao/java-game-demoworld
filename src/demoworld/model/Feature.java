@@ -98,7 +98,7 @@ public class Feature implements Adjuster{
     }
 
     /**
-     * Applies all .unadjusts required by the feature
+     * Applies all unadjusts required by the feature
      * @param character the Character to unadjust
      * @return the unadjusted character
      */
